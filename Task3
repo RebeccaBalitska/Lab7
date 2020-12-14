@@ -1,0 +1,23 @@
+import random
+
+n = int(input("Введіть кількість рядків матриці: "))
+m = int(input("Введіть кількість стовпців матриці і кількість елементів вектора: "))
+
+matrix_a = [[random.randint(-10, 10) for z in range(m)] for i in range(n)]
+print("-" * 5, "Початкова матриця А", "-" * 5)
+for i in matrix_a:
+    print(i)
+
+vect_x = [random.randint(-10, 10) for z in range(m)]
+print("Вектор х: ", vect_x)
+vect_b = []
+
+for el in matrix_a:
+    summ = 0
+    for x in el:
+        summ += x * vect_x[el.index(x)]
+    vect_b.append(summ)
+
+print("Вектор b: ", vect_b)
+
+	
