@@ -1,0 +1,23 @@
+import random
+
+def count_hr(ls):
+    summ = 0
+    for i in ls:
+        if i % 2 == 0:
+            summ += i
+    return summ
+
+n = int(input("Введіть кількість стовпців: "))
+m = int(input("Введіть кількість рядків: "))
+
+matrix = [[random.randint(0, 10) for z in range(n)] for i in range(m)]
+print("-" * 5, "Початкова матриця", "-" * 5)
+for i in matrix:
+    print(i)
+
+matrix.sort(key = lambda x: count_hr(x))
+print("-" * 5, "Кінцева матриця", "-" * 5)
+for i in matrix:
+    print(i)
+
+	
